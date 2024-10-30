@@ -14,6 +14,10 @@ app.use(cors());
 
 const PORT = process.env.PORT;
 
+app.get("/", (req, res) => {
+  res.send("Deployment succesfully");
+});
+
 app.use("/api/submit", userRoute);
 mongoose
   .connect(process.env.MONGODB_URI)
